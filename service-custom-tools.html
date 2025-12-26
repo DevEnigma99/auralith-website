@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom AI Tools | Auralith AI</title>
+    <meta name="description"
+        content="Bespoke solutions for unique challenges. Custom AI tools built specifically for your real estate business needs.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-hero {
+            padding: 180px 24px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            position: relative;
+            overflow: hidden
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 154, 254, 0.15) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-hero .subtitle {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-section {
+            padding: 60px 24px
+        }
+
+        .service-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 2rem;
+            text-align: center
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            color: #ADB7BB;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3A9AFE;
+            transform: translateY(-5px)
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3A9AFE;
+            margin-bottom: 1.5rem
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3A9AFE, #2575d8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin: 0 auto 1.5rem
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.75rem
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1)
+        }
+
+        .feature-item i {
+            color: #3A9AFE;
+            font-size: 1.25rem;
+            margin-top: 0.25rem
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.5rem
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 154, 254, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(58, 154, 254, 0.2)
+        }
+
+        .impact-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A9AFE;
+            margin-bottom: 0.5rem
+        }
+
+        .impact-stat p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease
+        }
+
+        .faq-question:hover {
+            color: #3A9AFE
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg)
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            margin: 0;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%)
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            margin-bottom: 2.5rem
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        @media (max-width:1024px) {
+
+            .benefits-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .steps-container,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:768px) {
+            .service-hero {
+                padding: 140px 16px 32px
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem
+            }
+
+            .service-section {
+                padding: 32px 16px
+            }
+
+            .service-section h2 {
+                font-size: 2rem
+            }
+
+            .benefits-grid,
+            .use-cases-grid,
+            .steps-container,
+            .impact-grid,
+            .features-list {
+                grid-template-columns: 1fr
+            }
+
+            .cta-section {
+                padding: 48px 16px
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+                    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <h1>Custom AI Tools</h1>
+        <p class="subtitle">Bespoke solutions for unique challenges. Custom-built AI tools designed specifically to
+            solve your unique real estate business problems.</p>
+        <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem;">Get Started</a>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>What is Custom AI Tools?</h2>
+            <p>Custom AI Tools is our bespoke development service that creates tailored AI solutions for challenges
+                unique to your real estate business. Whether you need a specialized workflow automation, a custom
+                integration, or an entirely new AI-powered feature, our team builds exactly what you need.</p>
+            <p>We work closely with you to understand your specific pain points, design a solution that fits seamlessly
+                into your existing processes, and deliver a custom tool that provides measurable value. Every custom
+                tool is built on our proven AI infrastructure and maintained as part of your Auralith subscription.</p>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Why It Matters</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Tailored Solutions</h3>
+                    <p>Get exactly what you need, not a one-size-fits-all product. Every tool is designed around your
+                        specific workflows and requirements.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-link"></i>
+                    <h3>Custom Integrations</h3>
+                    <p>Connect systems that don't normally talk to each other. We build bridges between your tools for
+                        seamless data flow.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa=" rocket"></i>
+                    <h3>Competitive Advantage</h3>
+                    <p>Gain capabilities your competitors don't have. Custom tools can become your secret weapon for
+                        efficiency and service quality.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Expert Consultation</h3>
+                    <p>Work directly with AI engineers who understand real estate. We bring technical expertise and
+                        industry knowledge.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Ongoing Support</h3>
+                    <p>Custom tools are maintained, updated, and supported as part of your subscription. No surprise
+                        bills or abandoned projects.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h3>Scalable Architecture</h3>
+                    <p>Built to grow with your business. Start small and expand functionality as your needs evolve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>How Custom AI Tools Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We meet to understand your challenge, current workflow, and desired outcome in detail.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our team designs a solution with mockups, workflows, and technical specifications for your
+                        approval.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>We build your custom tool with regular check-ins to ensure it meets your expectations.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Deployment</h3>
+                    <p>Launch the tool, train your team, and provide ongoing support and optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Workflow Automation</h4>
+                        <p>Automate complex, multi-step processes unique to your business that off-the-shelf tools can't
+                            handle.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Data Extraction</h4>
+                        <p>Pull data from PDFs, emails, websites, or legacy systems and transform it into structured,
+                            usable information.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Predictive Analytics</h4>
+                        <p>Build custom models that predict deal probability, property values, or market trends based on
+                            your data.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Custom Dashboards</h4>
+                        <p>Create personalized reporting and visualization tools that show exactly the metrics you care
+                            about.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>API Development</h4>
+                        <p>Build custom APIs that allow your systems to communicate and share data programmatically.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Chatbots & Assistants</h4>
+                        <p>Create AI assistants trained on your specific knowledge base, policies, and procedures.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Document Processing</h4>
+                        <p>Automate extraction, validation, and processing of contracts, disclosures, and other
+                            documents.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Legacy System Integration</h4>
+                        <p>Connect modern AI tools with older systems that lack APIs or modern integration capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Who Benefits From This?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Large Teams</h3>
+                    <p>Standardize complex workflows across dozens of agents with custom tools that enforce best
+                        practices and ensure consistency.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Niche Markets</h3>
+                    <p>Serve specialized markets like luxury, commercial, or land with tools designed for your specific
+                        property types and clientele.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Tech-Forward Brokerages</h3>
+                    <p>Differentiate your brokerage with proprietary technology that attracts top agents and provides
+                        unique value to clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>The Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Efficiency Gain</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}hrs</div>
+                    <p>Saved Per Week</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}x</div>
+                    <p>ROI on Investment</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Error Reduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">How much does custom development cost?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Pricing varies based on complexity and scope. Simple integrations start around $5,000, while
+                            complex custom tools can range from $15,000-$50,000+. We provide detailed quotes after
+                            discovery.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How long does development take?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Timeline depends on complexity. Simple tools can be delivered in 2-4 weeks, while
+                            comprehensive solutions may take 2-3 months. We provide realistic timelines during the
+                            design phase.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do I own the custom tool?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>You have exclusive use of the tool, but it's maintained as part of our platform. This ensures
+                            ongoing updates, security patches, and compatibility with our ecosystem.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What if my needs change after development?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>We can modify and expand custom tools as your business evolves. Minor updates are included in
+                            support; major enhancements are quoted separately.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can you integrate with any system?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>We can integrate with most systems that have APIs or data export capabilities. For systems
+                            without APIs, we can often build workarounds using automation or data scraping.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What happens if I cancel my subscription?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Custom tools are tied to your Auralith subscription. If you cancel, you lose access to the
+                            tools. We can discuss data export options and transition plans if needed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you provide training?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. Every custom tool includes training sessions for your team, documentation, and ongoing
+                            support to ensure successful adoption and usage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a demo or get started today.</p>
+            <div class="cta-buttons">
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem;">Start
+                    Now</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-secondary" style="font-size:1.1rem;padding:1rem 2.5rem;">Schedule
+                    a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>hello@auralith.ai</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => { button.addEventListener('click', () => { const faqItem = button.parentElement; const isActive = faqItem.classList.contains('active'); document.querySelectorAll('.faq-item').forEach(item => { item.classList.remove('active') }); if (!isActive) { faqItem.classList.add('active') } }) });
+    </script>
+</body>
+
+</html>

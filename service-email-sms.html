@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email/SMS Automation | Auralith AI</title>
+    <meta name="description"
+        content="Nurture sequences that keep leads warm. Automated email and SMS campaigns designed for real estate professionals.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-hero {
+            padding: 180px 24px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            position: relative;
+            overflow: hidden
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 154, 254, 0.15) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-hero .subtitle {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-section {
+            padding: 60px 24px
+        }
+
+        .service-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 2rem;
+            text-align: center
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            color: #ADB7BB;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3A9AFE;
+            transform: translateY(-5px)
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3A9AFE;
+            margin-bottom: 1.5rem
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3A9AFE, #2575d8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin: 0 auto 1.5rem
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.75rem
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1)
+        }
+
+        .feature-item i {
+            color: #3A9AFE;
+            font-size: 1.25rem;
+            margin-top: 0.25rem
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.5rem
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 154, 254, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(58, 154, 254, 0.2)
+        }
+
+        .impact-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A9AFE;
+            margin-bottom: 0.5rem
+        }
+
+        .impact-stat p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease
+        }
+
+        .faq-question:hover {
+            color: #3A9AFE
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg)
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            margin: 0;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%)
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            margin-bottom: 2.5rem
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        @media (max-width:1024px) {
+
+            .benefits-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .steps-container,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:768px) {
+            .service-hero {
+                padding: 140px 16px 32px
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem
+            }
+
+            .service-section {
+                padding: 32px 16px
+            }
+
+            .service-section h2 {
+                font-size: 2rem
+            }
+
+            .benefits-grid,
+            .use-cases-grid,
+            .steps-container,
+            .impact-grid,
+            .features-list {
+                grid-template-columns: 1fr
+            }
+
+            .cta-section {
+                padding: 48px 16px
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+                    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <h1>Email/SMS Automation</h1>
+        <p class="subtitle">Nurture sequences that keep leads warm. Automated multi-channel campaigns that build
+            relationships and drive conversions.</p>
+        <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem;">Get Started</a>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>What is Email/SMS Automation?</h2>
+            <p>Email/SMS Automation is a sophisticated multi-channel communication system that keeps your leads engaged
+                throughout their buying journey. Using behavioral triggers and AI-powered personalization, our platform
+                sends the right message at the right time through the right channel.</p>
+            <p>Unlike basic email marketing tools, our system understands real estate workflows and automatically adapts
+                messaging based on lead behavior, property preferences, and engagement patterns. Every campaign is
+                tracked, tested, and optimized for maximum conversion.</p>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Why It Matters</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Automated Nurturing</h3>
+                    <p>Set up sequences once and let them run automatically. Leads receive timely follow-ups without
+                        manual effort from your team.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Personalization at Scale</h3>
+                    <p>Dynamic content adapts to each recipient's preferences, behavior, and stage in the buying process
+                        for relevant messaging.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-mobile"></i>
+                    <h3>Multi-Channel Reach</h3>
+                    <p>Combine email and SMS for maximum engagement. Reach leads where they're most responsive and
+                        active.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Behavioral Triggers</h3>
+                    <p>Automatically send messages based on actions like website visits, email opens, property searches,
+                        or showing requests.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Perfect Timing</h3>
+                    <p>AI determines optimal send times based on recipient behavior patterns to maximize open and
+                        response rates.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Performance Analytics</h3>
+                    <p>Track opens, clicks, replies, and conversions with detailed reporting to continuously improve
+                        campaign effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>How Email/SMS Automation Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Trigger Event</h3>
+                    <p>A lead takes an action: form submission, property inquiry, email open, or website visit.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Sequence Activation</h3>
+                    <p>Automated workflow begins sending personalized messages via email and SMS based on predefined
+                        rules.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Engagement Tracking</h3>
+                    <p>System monitors opens, clicks, and replies to adjust messaging and timing dynamically.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Conversion</h3>
+                    <p>Leads book appointments, request showings, or take desired actions tracked in your CRM.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Drag-and-Drop Builder</h4>
+                        <p>Create beautiful emails with no coding required using our visual editor and professional
+                            templates.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>SMS Campaigns</h4>
+                        <p>Send text messages with links, images, and personalized content that drives immediate
+                            engagement.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Drip Campaigns</h4>
+                        <p>Set up multi-touch sequences that nurture leads over days, weeks, or months automatically.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>A/B Testing</h4>
+                        <p>Test subject lines, content, send times, and calls-to-action to optimize performance.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>List Segmentation</h4>
+                        <p>Target specific groups based on demographics, behavior, property preferences, or custom
+                            criteria.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Dynamic Content</h4>
+                        <p>Insert personalized property listings, market updates, and custom fields automatically.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Compliance Management</h4>
+                        <p>Automatic unsubscribe handling, CAN-SPAM compliance, and TCPA-compliant SMS opt-in tracking.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Mobile Optimization</h4>
+                        <p>All emails are automatically optimized for mobile devices where most recipients read
+                            messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Who Benefits From This?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Listing Agents</h3>
+                    <p>Automatically nurture buyer leads with new listings, price drops, and open house invitations
+                        based on their search criteria.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Buyer's Agents</h3>
+                    <p>Keep buyers engaged with market updates, new inventory alerts, and personalized property
+                        recommendations.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Property Managers</h3>
+                    <p>Automate tenant communication, lease renewals, maintenance updates, and rental application
+                        follow-ups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>The Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Higher Open Rates</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Increase in Engagement</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}hrs</div>
+                    <p>Saved Per Week</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Conversion Rate Boost</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">How many emails can I send?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Plans include generous sending limits based on your contact list size. Most agents never hit
+                            their limits, and we can accommodate high-volume senders with custom plans.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are SMS messages extra?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>SMS is charged separately based on usage, typically $0.01-0.02 per message. You have full
+                            control over SMS budgets and can set monthly limits.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I use my own email domain?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. We help you set up proper authentication (SPF, DKIM, DMARC) to ensure high
+                            deliverability when sending from your domain.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What about spam filters?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Our platform maintains excellent sender reputation and provides best practice guidance to
+                            keep your emails out of spam folders.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I import existing email templates?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. Import HTML templates or recreate them using our drag-and-drop builder. We also provide
+                            real estate-specific templates to get you started.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a demo or get started today.</p>
+            <div class="cta-buttons">
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem;">Start
+                    Now</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-secondary" style="font-size:1.1rem;padding:1rem 2.5rem;">Schedule
+                    a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>hello@auralith.ai</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => { button.addEventListener('click', () => { const faqItem = button.parentElement; const isActive = faqItem.classList.contains('active'); document.querySelectorAll('.faq-item').forEach(item => { item.classList.remove('active') }); if (!isActive) { faqItem.classList.add('active') } }) });
+    </script>
+</body>
+
+</html>

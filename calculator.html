@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator | Auralith AI</title>
+    <meta name="description"
+        content="Calculate your potential ROI with Auralith AI. See how much commission you're losing to slow follow-up.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Meta Pixel Code Placeholder -->
+    <!-- <script> ... </script> -->
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google Tag Manager Placeholder -->
+    <!-- <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
+    <!-- End Google Tag Manager -->
+
+    <style>
+        /* Page Specific Overrides */
+        .page-header {
+            padding-top: 180px !important;
+            padding-bottom: 4rem;
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .calculator-inputs h3,
+        .calculator-results h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+        }
+
+        .result-item.highlight {
+            background: rgba(75, 163, 255, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .result-item.lost {
+            background: rgba(255, 75, 75, 0.1);
+            border-color: rgba(255, 75, 75, 0.3);
+        }
+
+        .result-item .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .result-item .value {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .result-item.highlight .value {
+            color: var(--accent-blue);
+        }
+
+        .result-item.lost .value {
+            color: #ff4b4b;
+        }
+
+        .result-details {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .result-details p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .text-blue {
+            color: var(--accent-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .page-header {
+                padding-top: 140px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+                    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header section text-center">
+        <div class="container">
+            <h1 class="animate-on-scroll">Your Leads Are Slipping Away.</h1>
+            <p class="subheadline animate-on-scroll">Let’s see how much it’s costing you.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section calculator-section">
+        <div class="container">
+            <div class="calculator-container animate-on-scroll">
+                <div class="calculator-inputs">
+                    <h3>Enter Your Numbers</h3>
+                    <div class="input-group">
+                        <label for="monthly-leads">Monthly Leads</label>
+                        <input type="number" id="monthly-leads" placeholder="e.g. 50" value="50">
+                    </div>
+                    <div class="input-group">
+                        <label for="home-price">Average Home Price ($)</label>
+                        <input type="number" id="home-price" placeholder="e.g. 500000" value="500000">
+                    </div>
+                    <div class="input-group">
+                        <label for="commission-rate">Commission Rate (%)</label>
+                        <input type="number" id="commission-rate" placeholder="e.g. 2.5" value="2.5" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="current-conversion">Current Conversion Rate (%)</label>
+                        <input type="number" id="current-conversion" placeholder="e.g. 1" value="1" step="0.1">
+                    </div>
+                    <button id="calculate-btn" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Calculate
+                        ROI</button>
+                </div>
+
+                <div class="calculator-results">
+                    <h3>Your Potential Results</h3>
+
+                    <div class="result-item">
+                        <span class="label">Current Monthly Commission:</span>
+                        <span class="value" id="current-commission">$0</span>
+                    </div>
+
+                    <div class="result-item highlight">
+                        <span class="label">Potential with Auralith (3x Conversion):</span>
+                        <span class="value" id="potential-commission">$0</span>
+                    </div>
+
+                    <div class="result-item lost">
+                        <span class="label">Money You're Leaving on the Table:</span>
+                        <span class="value" id="lost-commission">$0</span>
+                    </div>
+
+                    <div class="result-details">
+                        <p><i class="fas fa-check text-blue"></i> <span id="leads-saved">0</span> more deals closed per
+                            month</p>
+                        <p><i class="fas fa-check text-blue"></i> <span id="hours-saved">0</span> hours of follow-up
+                            saved</p>
+                    </div>
+
+                    <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary mt-md" style="width: 100%;">Get Full Report + Book
+                        Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>hello@auralith.ai</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/conversion.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

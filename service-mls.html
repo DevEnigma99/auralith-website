@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLS Listing Support | Auralith AI</title>
+    <meta name="description"
+        content="Optimize listings for maximum visibility. AI-powered MLS optimization and listing management.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-hero {
+            padding: 180px 24px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            position: relative;
+            overflow: hidden
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 154, 254, 0.15) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-hero .subtitle {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-section {
+            padding: 60px 24px
+        }
+
+        .service-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 2rem;
+            text-align: center
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            color: #ADB7BB;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3A9AFE;
+            transform: translateY(-5px)
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3A9AFE;
+            margin-bottom: 1.5rem
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3A9AFE, #2575d8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin: 0 auto 1.5rem
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.75rem
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1)
+        }
+
+        .feature-item i {
+            color: #3A9AFE;
+            font-size: 1.25rem;
+            margin-top: 0.25rem
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.5rem
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 154, 254, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(58, 154, 254, 0.2)
+        }
+
+        .impact-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A9AFE;
+            margin-bottom: 0.5rem
+        }
+
+        .impact-stat p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease
+        }
+
+        .faq-question:hover {
+            color: #3A9AFE
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg)
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            margin: 0;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%)
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            margin-bottom: 2.5rem
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        @media (max-width:1024px) {
+
+            .benefits-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .steps-container,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:768px) {
+            .service-hero {
+                padding: 140px 16px 32px
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem
+            }
+
+            .service-section {
+                padding: 32px 16px
+            }
+
+            .service-section h2 {
+                font-size: 2rem
+            }
+
+            .benefits-grid,
+            .use-cases-grid,
+            .steps-container,
+            .impact-grid,
+            .features-list {
+                grid-template-columns: 1fr
+            }
+
+            .cta-section {
+                padding: 48px 16px
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+                    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <h1>MLS Listing Support</h1>
+        <p class="subtitle">Optimize listings for maximum visibility. AI-powered descriptions, photo enhancement, and
+            SEO optimization that makes your listings stand out.</p>
+        <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem;">Get Started</a>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>What is MLS Listing Support?</h2>
+            <p>MLS Listing Support is an AI-powered system that optimizes every aspect of your property listings to
+                maximize visibility, engagement, and buyer interest. From compelling descriptions to photo enhancement
+                and strategic keyword placement, our platform ensures your listings get noticed and generate more
+                showings.</p>
+            <p>The system analyzes top-performing listings in your market, identifies what makes them successful, and
+                applies those insights to your properties. Every listing is optimized for both MLS search algorithms and
+                human buyers, resulting in more views, more inquiries, and faster sales.</p>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Why It Matters</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>AI-Written Descriptions</h3>
+                    <p>Generate compelling, SEO-optimized listing descriptions that highlight key features and appeal to
+                        target buyers in seconds.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photo Optimization</h3>
+                    <p>Automatically enhance photos, adjust lighting, remove objects, and create virtual staging to
+                        showcase properties at their best.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-search"></i>
+                    <h3>SEO Optimization</h3>
+                    <p>Strategic keyword placement ensures your listings appear in more searches on MLS portals and
+                        consumer sites like Zillow.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Analytics</h3>
+                    <p>Track views, saves, shares, and showing requests to understand what's working and optimize future
+                        listings.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Multi-Platform Syndication</h3>
+                    <p>Automatically distribute optimized listings to Zillow, Realtor.com, Trulia, and other major real
+                        estate portals.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Smart Suggestions</h3>
+                    <p>AI recommends improvements to pricing, photos, descriptions, and features based on market data
+                        and buyer behavior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>How MLS Listing Support Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Property Input</h3>
+                    <p>Enter basic property details or import directly from your MLS system.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>AI Optimization</h3>
+                    <p>AI generates descriptions, enhances photos, and optimizes all fields for maximum visibility.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Review & Publish</h3>
+                    <p>Review AI suggestions, make any desired edits, and publish to MLS with one click.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Track Performance</h3>
+                    <p>Monitor listing performance and receive AI recommendations for improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Description Generator</h4>
+                        <p>AI creates unique, engaging descriptions tailored to property type, price point, and target
+                            buyer demographics.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Photo Enhancement</h4>
+                        <p>Automatic color correction, brightness adjustment, and HDR processing to make photos pop.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Virtual Staging</h4>
+                        <p>Add furniture and decor to empty rooms digitally to help buyers visualize the space.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Keyword Research</h4>
+                        <p>Identify high-performing keywords and phrases buyers use when searching for properties like
+                            yours.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Competitive Analysis</h4>
+                        <p>Compare your listing to similar properties and get recommendations to stand out from
+                            competition.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Floorplan Generation</h4>
+                        <p>Create professional floorplans from photos or sketches to give buyers better spatial
+                            understanding.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Video Creation</h4>
+                        <p>Automatically generate property tour videos from photos with music and transitions.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Compliance Checking</h4>
+                        <p>Ensure listings meet MLS rules, fair housing requirements, and advertising regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Who Benefits From This?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Listing Agents</h3>
+                    <p>Create standout listings faster, attract more qualified buyers, and sell properties quicker with
+                        optimized presentation.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>New Agents</h3>
+                    <p>Compete with experienced agents by creating professional, high-quality listings without years of
+                        copywriting experience.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>High-Volume Teams</h3>
+                    <p>Maintain consistent quality across dozens of listings while saving hours on description writing
+                        and photo editing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>The Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>More Listing Views</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}hrs</div>
+                    <p>Saved Per Listing</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>More Showing Requests</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}days</div>
+                    <p>Faster Sales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Can I edit the AI-generated descriptions?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. All AI-generated content is fully editable. Use it as-is or customize it to match your
+                            style and add personal touches.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Does it work with my MLS?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>We integrate with most major MLS systems in the US and Canada. Contact us to confirm
+                            compatibility with your specific MLS.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What about photo copyrights?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>You retain full ownership of all photos and enhanced images. Our enhancements are
+                            non-destructive and original files are always preserved.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can it create virtual tours?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. We can generate video tours from photos and integrate with 3D tour providers like
+                            Matterport for enhanced virtual experiences.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How does pricing optimization work?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>AI analyzes comparable sales, current market conditions, and listing performance to suggest
+                            optimal pricing strategies and adjustments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a demo or get started today.</p>
+            <div class="cta-buttons">
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem;">Start
+                    Now</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-secondary" style="font-size:1.1rem;padding:1rem 2.5rem;">Schedule
+                    a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>hello@auralith.ai</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => { button.addEventListener('click', () => { const faqItem = button.parentElement; const isActive = faqItem.classList.contains('active'); document.querySelectorAll('.faq-item').forEach(item => { item.classList.remove('active') }); if (!isActive) { faqItem.classList.add('active') } }) });
+    </script>
+</body>
+
+</html>

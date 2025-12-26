@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Auralith AI Real Estate Automation</title>
+    <meta name="description"
+        content="From AI Voice Calling to Transaction Coordination, explore our full suite of automation services designed for high-growth real estate teams.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Meta Pixel Code Placeholder -->
+    <!-- <script> ... </script> -->
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google Tag Manager Placeholder -->
+    <!-- <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
+    <!-- End Google Tag Manager -->
+
+    <style>
+        /* Page Specific Overrides */
+        .page-header {
+            padding-top: 180px !important;
+            /* Ensure visible under navbar */
+            padding-bottom: 4rem;
+        }
+
+        .services-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            /* Ensure links don't have underlines */
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-item .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent-silver);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover .card-icon {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
+        .service-item h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-item p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .learn-more {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header {
+                padding-top: 140px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+        <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Header -->
+    <section class="page-header section text-center">
+        <div class="container">
+            <h1 class="animate-on-scroll">Everything You Need to Automate Your Real Estate Business.</h1>
+            <p class="subheadline animate-on-scroll">Comprehensive AI solutions designed to scale your agency.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section services-grid-section">
+        <div class="container">
+            <div class="services-grid-container">
+                <!-- Service 1 -->
+                <a href="service-lead-gen.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-bullhorn card-icon"></i>
+                    <h3>Lead Generation</h3>
+                    <p>High-intent Meta + Google ads that convert.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 2 -->
+                <a href="service-ai-voice.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-robot card-icon"></i>
+                    <h3>AI Voice Qualifier</h3>
+                    <p>Instant calls to qualify leads 24/7.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 3 -->
+                <a href="service-crm.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-database card-icon"></i>
+                    <h3>Custom AI CRM</h3>
+                    <p>Smart pipeline management and automation.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 4 -->
+                <a href="service-email-sms.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-envelope card-icon"></i>
+                    <h3>Email/SMS Automation</h3>
+                    <p>Nurture sequences that keep leads warm.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 5 -->
+                <a href="service-social-content.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-hashtag card-icon"></i>
+                    <h3>Social Media Content</h3>
+                    <p>AI-generated content to build your brand.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 6 -->
+                <a href="service-transaction.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-file-contract card-icon"></i>
+                    <h3>Transaction Coordination</h3>
+                    <p>Automate paperwork and compliance.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 7 -->
+                <a href="service-mls.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-home card-icon"></i>
+                    <h3>MLS Listing Support</h3>
+                    <p>Optimize listings for maximum visibility.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 8 -->
+                <a href="service-bookkeeping.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-calculator card-icon"></i>
+                    <h3>Bookkeeping</h3>
+                    <p>Financial tracking and reporting made easy.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- Service 9 -->
+                <a href="service-custom-tools.html" class="service-item animate-on-scroll">
+                    <i class="fas fa-tools card-icon"></i>
+                    <h3>Custom AI Tools</h3>
+                    <p>Bespoke solutions for unique challenges.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>hello@auralith.ai</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

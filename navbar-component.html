@@ -1,0 +1,149 @@
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #000000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .logo img {
+        height: 40px;
+        width: auto;
+    }
+
+    .logo-text {
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: #FFFFFF;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+    }
+
+    .nav-links a:not(.btn) {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .nav-links a:not(.btn):hover {
+        opacity: 0.7;
+    }
+
+    .nav-cta {
+        background: #3A9AFE;
+        color: #FFFFFF;
+        padding: 10px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        box-shadow: 0 0 15px rgba(58, 154, 254, 0.3);
+    }
+
+    .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 25px rgba(58, 154, 254, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .mobile-menu-btn {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #000000;
+            flex-direction: column;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 1.5rem;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-cta {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuBtn) {
+            menuBtn.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        }
+    });
+</script>
