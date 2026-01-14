@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -18,6 +30,57 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    (function () {
+        const track = document.getElementById("marqueeTrack");
+        if (!track) return;
+
+        // Prevent double-initializing (helpful with hot reload / re-renders)
+        if (track.dataset.marqueeInit === "1") return;
+        track.dataset.marqueeInit = "1";
+
+        // Wrap ONLY element children (no whitespace text nodes)
+        const set = document.createElement("div");
+        set.className = "marquee-set";
+        set.style.display = "flex";
+        set.style.gap = getComputedStyle(track).gap;
+
+        while (track.firstElementChild) {
+            set.appendChild(track.firstElementChild);
+        }
+
+        track.appendChild(set);
+
+        // Clone once => 2 identical sets
+        const clone = set.cloneNode(true);
+        track.appendChild(clone);
+
+        const pixelsPerSecond = 120;
+
+        const measure = () => {
+            const w = set.getBoundingClientRect().width;
+            track.style.setProperty("--marquee-shift", `${w}px`);
+            track.style.setProperty("--marquee-duration", `${w / pixelsPerSecond}s`);
+        };
+
+        // Wait for fonts/icons to load so widths don't change mid-animation
+        const start = () => {
+            measure();
+        };
+
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => requestAnimationFrame(start));
+        } else {
+            window.addEventListener("load", () => requestAnimationFrame(start), { once: true });
+        }
+
+        let r;
+        window.addEventListener("resize", () => {
+            cancelAnimationFrame(r);
+            r = requestAnimationFrame(measure);
+        });
+    })();
+
 
     // Intersection Observer for Fade-in Animations
     const observerOptions = {
@@ -38,51 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Calculator Logic
-    const calcBtn = document.getElementById('calculate-btn');
-    if (calcBtn) {
-        calcBtn.addEventListener('click', calculateROI);
-        // Initial calculation
-        calculateROI();
-    }
+    // Logic moved to js/calculator-full.js for consistency across pages
 
-    function calculateROI() {
-        const leads = parseFloat(document.getElementById('monthly-leads').value) || 0;
-        const price = parseFloat(document.getElementById('home-price').value) || 0;
-        const commissionRate = parseFloat(document.getElementById('commission-rate').value) || 0;
-        const currentConv = parseFloat(document.getElementById('current-conversion').value) || 0;
-
-        // Current
-        const currentDeals = leads * (currentConv / 100);
-        const commissionPerDeal = price * (commissionRate / 100); // Usually split, but let's assume gross for simplicity or agent side
-        // Let's assume the input is the agent's take or total GCI.
-        // Standard GCI calculation: Price * Rate
-        const currentCommission = currentDeals * commissionPerDeal;
-
-        // With Auralith (Assuming 3x conversion or specific boost)
-        // Let's be conservative and say +2% absolute or 2x relative.
-        // The prompt says "Potential commission with Auralith".
-        // Let's assume a 3x boost for "Speed to Lead" impact.
-        const newConv = currentConv * 3;
-        const newDeals = leads * (newConv / 100);
-        const newCommission = newDeals * commissionPerDeal;
-
-        const lostCommission = newCommission - currentCommission;
-        const dealsDiff = newDeals - currentDeals;
-        const hoursSaved = leads * 0.5; // Assuming 30 mins per lead follow up manually
-
-        // Update DOM
-        document.getElementById('current-commission').textContent = formatCurrency(currentCommission);
-        document.getElementById('potential-commission').textContent = formatCurrency(newCommission);
-        document.getElementById('lost-commission').textContent = formatCurrency(lostCommission);
-
-        document.getElementById('leads-saved').textContent = Math.round(dealsDiff * 10) / 10;
-        document.getElementById('hours-saved').textContent = Math.round(hoursSaved);
-    }
-
-    function formatCurrency(num) {
-        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(num);
-    }
-    
     // Mouse Spotlight Effect
     document.addEventListener('mousemove', (e) => {
         const x = e.clientX;
@@ -95,17 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function initTextFlip() {
         const wrapper = document.querySelector('.flip-wrapper');
         if (!wrapper) return;
-        
+
         const items = wrapper.querySelectorAll('.flip-item');
         const totalItems = items.length;
         let currentIndex = 0;
-        
+
         setInterval(() => {
             currentIndex = (currentIndex + 1) % totalItems;
             const translateY = -(currentIndex * 1.2) + 'em'; // 1.2em is the height
             wrapper.style.transform = `translateY(${translateY})`;
         }, 2500);
     }
-    
+
     initTextFlip();
 });
