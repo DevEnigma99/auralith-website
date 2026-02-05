@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookkeeping | Auralith AI</title>
+    <meta name="description"
+        content="Financial tracking and reporting made easy. Automated bookkeeping for real estate professionals.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-hero {
+            padding: 180px 24px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            position: relative;
+            overflow: hidden
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 154, 254, 0.15) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-hero .subtitle {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-section {
+            padding: 60px 24px
+        }
+
+        .service-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 2rem;
+            text-align: center
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            color: #ADB7BB;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3A9AFE;
+            transform: translateY(-5px)
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3A9AFE;
+            margin-bottom: 1.5rem
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3A9AFE, #2575d8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin: 0 auto 1.5rem
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.75rem
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1)
+        }
+
+        .feature-item i {
+            color: #3A9AFE;
+            font-size: 1.25rem;
+            margin-top: 0.25rem
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.5rem
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 154, 254, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(58, 154, 254, 0.2)
+        }
+
+        .impact-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A9AFE;
+            margin-bottom: 0.5rem
+        }
+
+        .impact-stat p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease
+        }
+
+        .faq-question:hover {
+            color: #3A9AFE
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg)
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            margin: 0;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%)
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            margin-bottom: 2.5rem
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        @media (max-width:1024px) {
+
+            .benefits-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .steps-container,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:768px) {
+            .service-hero {
+                padding: 140px 16px 32px
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem
+            }
+
+            .service-section {
+                padding: 32px 16px
+            }
+
+            .service-section h2 {
+                font-size: 2rem
+            }
+
+            .benefits-grid,
+            .use-cases-grid,
+            .steps-container,
+            .impact-grid,
+            .features-list {
+                grid-template-columns: 1fr
+            }
+
+            .cta-section {
+                padding: 48px 16px
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center
+            }
+        }
+    </style>
+
+    <link rel='icon' type='image/png' href='assets/favicon.png'>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V5DG2L2VD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3V5DG2L2VD');
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI
+                    Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <h1>Bookkeeping</h1>
+        <p class="subtitle">Financial tracking and reporting made easy. Automated bookkeeping designed specifically for
+            real estate professionals to maximize deductions and simplify tax time.</p>
+        <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+            style="font-size:1.1rem;padding:1rem 2.5rem;">Get Started</a>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>What is Bookkeeping?</h2>
+            <p>Bookkeeping is an AI-powered financial management system built specifically for real estate agents and
+                brokers. Our platform automatically tracks income and expenses, categorizes transactions, manages
+                receipts, and generates reports that make tax preparation effortless and maximize your deductions.</p>
+            <p>Unlike generic accounting software, our system understands real estate business structures, commission
+                splits, transaction-specific expenses, and industry-specific deductions. Every transaction is
+                automatically categorized correctly, saving you hours of manual data entry and reducing errors.</p>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Why It Matters</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automated Tracking</h3>
+                    <p>Connect bank accounts and credit cards for automatic transaction import and categorization. No
+                        more manual data entry.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-receipt"></i>
+                    <h3>Receipt Management</h3>
+                    <p>Snap photos of receipts with your phone and AI automatically extracts data, categorizes expenses,
+                        and stores them securely.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-percentage"></i>
+                    <h3>Mileage Tracking</h3>
+                    <p>Automatic mileage logging for showings, meetings, and property visits with IRS-compliant
+                        documentation.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Commission Tracking</h3>
+                    <p>Track commission income, splits, and broker fees with transaction-level detail for accurate
+                        reporting.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Financial Reports</h3>
+                    <p>Generate profit & loss statements, expense reports, and tax summaries with one click for yourself
+                        or your accountant.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Tax Optimization</h3>
+                    <p>AI identifies missed deductions and suggests strategies to minimize tax liability throughout the
+                        year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>How Bookkeeping Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Connect Accounts</h3>
+                    <p>Link bank accounts, credit cards, and payment processors for automatic transaction syncing.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Auto-Categorization</h3>
+                    <p>AI categorizes transactions based on real estate business rules and learns from your corrections.
+                    </p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Receipt Capture</h3>
+                    <p>Upload receipts via mobile app or email and AI matches them to transactions automatically.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Reports & Insights</h3>
+                    <p>Access real-time financial dashboards and generate reports for tax planning or business
+                        decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Bank Integration</h4>
+                        <p>Secure connections to 10,000+ financial institutions with automatic daily transaction
+                            syncing.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Smart Categorization</h4>
+                        <p>AI learns your spending patterns and automatically categorizes transactions with 95%+
+                            accuracy.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Mobile Receipt Scanning</h4>
+                        <p>Capture receipts on-the-go with OCR technology that extracts merchant, date, amount, and
+                            category.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Mileage Automation</h4>
+                        <p>GPS-based mileage tracking with automatic trip detection and IRS-compliant logs.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Quarterly Tax Estimates</h4>
+                        <p>Calculate estimated quarterly tax payments based on income and expenses to avoid penalties.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Accountant Access</h4>
+                        <p>Grant secure access to your CPA or bookkeeper for seamless collaboration and tax preparation.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Expense Insights</h4>
+                        <p>Visualize spending patterns, identify cost-saving opportunities, and track budget vs. actual.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>1099 Preparation</h4>
+                        <p>Track 1099 income and generate year-end tax documents ready for your accountant or tax
+                            software.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Who Benefits From This?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Independent Agents</h3>
+                    <p>Manage your finances without hiring a bookkeeper. Track every deduction and maximize tax savings
+                        on your own.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Team Leaders</h3>
+                    <p>Monitor team expenses, track commission splits, and generate financial reports for business
+                        planning and growth.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Brokerages</h3>
+                    <p>Provide bookkeeping as a value-add service to agents while maintaining oversight of brokerage
+                        finances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>The Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="stat-number">{X}hrs</div>
+                    <p>Saved Per Month</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>More Deductions Found</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Reduction in Errors</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">${X}</div>
+                    <p>Average Tax Savings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Is my financial data secure?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. We use bank-level 256-bit encryption, multi-factor authentication, and never store your
+                            bank login credentials. All data is encrypted at rest and in transit.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I import data from QuickBooks or other software?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. We support imports from QuickBooks, FreshBooks, Wave, and CSV files. Our team can help
+                            migrate your historical data.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do I still need an accountant?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>We recommend working with a CPA for tax filing and strategic planning. Our system makes their
+                            job easier and less expensive by providing organized, accurate records.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How does mileage tracking work?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Our mobile app uses GPS to automatically detect trips. You simply classify them as business
+                            or personal. The system calculates deductions using current IRS mileage rates.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can it handle multiple properties or businesses?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. Track multiple entities, rental properties, or business ventures separately while
+                            maintaining consolidated reporting for your overall financial picture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a demo or get started today.</p>
+            <div class="cta-buttons">
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+                    style="font-size:1.1rem;padding:1rem 2.5rem;">Start
+                    Now</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-secondary"
+                    style="font-size:1.1rem;padding:1rem 2.5rem;">Schedule
+                    a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>teams@auralithai.co</p>
+                    <p>+1 813-437-4612</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => { button.addEventListener('click', () => { const faqItem = button.parentElement; const isActive = faqItem.classList.contains('active'); document.querySelectorAll('.faq-item').forEach(item => { item.classList.remove('active') }); if (!isActive) { faqItem.classList.add('active') } }) });
+    </script>
+</body>
+
+</html>
+

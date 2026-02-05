@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Automation Blog | Auralith AI</title>
+    <meta name="description" content="Insights, tips, and trends on real estate automation, AI, and lead conversion.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Meta Pixel Code Placeholder -->
+    <!-- <script> ... </script> -->
+    <!-- End Meta Pixel Code -->    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V5DG2L2VD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3V5DG2L2VD');
+    </script>
+
+    <style>
+        /* Page Specific Overrides */
+        .page-header {
+            padding-top: 180px !important;
+            padding-bottom: 4rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-image {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .blog-card h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .date {
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem !important;
+        }
+
+        .blog-card p:not(.date) {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .read-more:hover {
+            gap: 0.75rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header {
+                padding-top: 140px !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI
+                    Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header section text-center">
+        <div class="container">
+            <h1 class="animate-on-scroll">Insights & News</h1>
+            <p class="subheadline animate-on-scroll">The latest on AI, real estate, and automation.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="section blog-section">
+        <div class="container">
+            <div class="grid-3 animate-on-scroll">
+                <!-- Article 1 -->
+                <article class="card blog-card">
+                    <img src="assets/blog-speed.png" alt="Speed to Lead" class="blog-image"
+                        style="height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3>Why Speed Leads to Sales: The AI Advantage</h3>
+                    <p class="date">Jan 5, 2026</p>
+                    <p>Learn why calling leads within 5 minutes increases conversion by 400%.</p>
+                    <a href="blog-post-1.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="card blog-card">
+                    <img src="assets/blog-money.png" alt="Lost Commission" class="blog-image"
+                        style="height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3>Stop Losing Commissions: The Cost of Slow Follow-up</h3>
+                    <p class="date">Jan 6, 2026</p>
+                    <p>Are you leaving $15k/mo on the table? See the math behind lost leads.</p>
+                    <a href="blog-post-2.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="card blog-card">
+                    <img src="assets/blog-future.png" alt="Future Agent" class="blog-image"
+                        style="height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3>The Future of Real Estate Agents: AI as Your Superpower</h3>
+                    <p class="date">Jan 8, 2026</p>
+                    <p>AI won't replace you. It will make you 10x more productive. Here's how.</p>
+                    <a href="blog-post-3.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container text-center">
+            <h2 class="animate-on-scroll">Stay ahead of the curve.</h2>
+            <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary mt-sm animate-on-scroll">Book a
+                Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>teams@auralithai.co</p>
+                    <p>+1 813-437-4612</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

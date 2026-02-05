@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom AI CRM | Auralith AI</title>
+    <meta name="description"
+        content="Smart pipeline management and automation. AI-powered CRM built specifically for real estate professionals.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Service Page Specific Styles */
+        .service-hero {
+            padding: 180px 24px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 154, 254, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-hero .subtitle {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-section {
+            padding: 60px 24px;
+        }
+
+        .service-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            color: #ADB7BB;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3A9AFE;
+            transform: translateY(-5px);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3A9AFE;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3A9AFE, #2575d8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-item i {
+            color: #3A9AFE;
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+            margin: 0;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 154, 254, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(58, 154, 254, 0.2);
+        }
+
+        .impact-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A9AFE;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-stat p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            margin: 0;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #3A9AFE;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            margin: 0;
+            color: #ADB7BB;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 1024px) {
+
+            .benefits-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-container,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-hero {
+                padding: 140px 16px 32px;
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-section {
+                padding: 32px 16px;
+            }
+
+            .service-section h2 {
+                font-size: 2rem;
+            }
+
+            .benefits-grid,
+            .use-cases-grid,
+            .steps-container,
+            .impact-grid,
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 48px 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+    <link rel='icon' type='image/png' href='assets/favicon.png'>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V5DG2L2VD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3V5DG2L2VD');
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI
+                    Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section class="service-hero">
+        <h1>Custom AI CRM</h1>
+        <p class="subtitle">Smart pipeline management and automation. A CRM built specifically for real estate
+            professionals with AI-powered insights and workflow automation.</p>
+        <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+            style="font-size: 1.1rem; padding: 1rem 2.5rem;">Get
+            Started</a>
+    </section>
+
+    <!-- SECTION 2: OVERVIEW -->
+    <section class="service-section">
+        <div class="container">
+            <h2>What is Custom AI CRM?</h2>
+            <p>Custom AI CRM is an intelligent customer relationship management system designed from the ground up for
+                real estate professionals. Unlike generic CRMs that require extensive customization, our platform
+                understands the unique workflows, terminology, and challenges of real estate from day one.</p>
+            <p>Powered by AI, the system automatically categorizes leads, predicts deal probability, suggests next
+                actions, and automates repetitive tasks. Every interaction is tracked, analyzed, and used to provide
+                actionable insights that help you close more deals faster.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: KEY BENEFITS -->
+    <section class="service-section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2>Why It Matters</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Predictive analytics identify which leads are most likely to convert, helping you prioritize your
+                        time and energy on high-value opportunities.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Workflow Automation</h3>
+                    <p>Automate follow-ups, task creation, status updates, and data entry. The CRM handles busywork so
+                        you can focus on building relationships.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile-First Design</h3>
+                    <p>Full functionality on any device. Update deals, log activities, and access client information
+                        from your phone, tablet, or desktop.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>Deep Integrations</h3>
+                    <p>Connect with MLS systems, email platforms, calendars, transaction management tools, and marketing
+                        automation seamlessly.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Real-Time Reporting</h3>
+                    <p>Visualize your pipeline, track conversion rates, and measure team performance with customizable
+                        dashboards and reports.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Data Security</h3>
+                    <p>Enterprise-grade security with encryption, role-based access controls, and compliance with
+                        industry data protection standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: HOW IT WORKS -->
+    <section class="service-section">
+        <div class="container">
+            <h2>How Custom AI CRM Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Lead Capture</h3>
+                    <p>Leads automatically flow into the CRM from all sources: website, ads, referrals, open houses, and
+                        third-party platforms.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>AI Classification</h3>
+                    <p>AI analyzes lead data, assigns scores, categorizes by type, and routes to the appropriate agent
+                        or team member.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Automated Workflows</h3>
+                    <p>Trigger sequences for follow-up emails, SMS, tasks, and reminders based on lead behavior and
+                        pipeline stage.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Deal Management</h3>
+                    <p>Track progress through each pipeline stage with automated status updates, document management,
+                        and collaboration tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FEATURES -->
+    <section class="service-section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Smart Lead Scoring</h4>
+                        <p>AI evaluates lead quality based on engagement, demographics, behavior, and historical data to
+                            prioritize follow-up.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Pipeline Visualization</h4>
+                        <p>Drag-and-drop interface shows deals at each stage with customizable pipelines for buyers,
+                            sellers, and rentals.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Activity Tracking</h4>
+                        <p>Automatically log calls, emails, texts, meetings, and property showings with timestamps and
+                            context.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Task Automation</h4>
+                        <p>Create recurring tasks, set reminders, and auto-assign follow-ups based on deal stage or time
+                            elapsed.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Email & SMS Integration</h4>
+                        <p>Send and receive messages directly from the CRM with templates, scheduling, and automated
+                            sequences.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Document Management</h4>
+                        <p>Store contracts, disclosures, and client documents with version control and e-signature
+                            integration.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Team Collaboration</h4>
+                        <p>Share notes, assign tasks, and communicate with team members within each deal record.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Custom Fields & Tags</h4>
+                        <p>Create unlimited custom fields, tags, and categories to organize contacts and deals your way.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Calendar Sync</h4>
+                        <p>Two-way sync with Google Calendar, Outlook, and Apple Calendar for seamless scheduling.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Advanced Reporting</h4>
+                        <p>Generate reports on conversion rates, lead sources, agent performance, and revenue
+                            forecasting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: USE CASES -->
+    <section class="service-section">
+        <div class="container">
+            <h2>Who Benefits From This?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Solo Agents</h3>
+                    <p>Manage your entire business from one platform. Track leads, automate follow-ups, and never miss
+                        an opportunity without hiring an assistant.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Team Leaders</h3>
+                    <p>Monitor team performance, distribute leads fairly, and ensure consistent follow-up across all
+                        agents with centralized oversight.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Brokerages</h3>
+                    <p>Provide a unified platform for all agents with brokerage-level reporting, compliance tracking,
+                        and standardized workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: IMPACT -->
+    <section class="service-section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2>The Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Increase in Conversions</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}hrs</div>
+                    <p>Saved Per Week</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Faster Response Time</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Better Lead Retention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FAQ -->
+    <section class="service-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I import my existing contacts?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. We support bulk imports from CSV files and direct migrations from most major CRMs
+                            including Follow Up Boss, LionDesk, KvCORE, and others. Our team will help ensure a smooth
+                            data transition.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How is this different from other real estate CRMs?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our CRM is built with AI at its core, not as an add-on. This means smarter automation,
+                            predictive insights, and less manual work. Plus, we offer deep customization without the
+                            complexity of enterprise platforms.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there a learning curve?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We've designed the interface to be intuitive and familiar. Most users are productive within
+                            hours, not weeks. We also provide onboarding training, video tutorials, and ongoing support.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I customize the pipeline stages?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Create unlimited custom pipelines with your own stages, automation rules, and
+                            workflows. Tailor the system to match your exact business process.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Does it integrate with my MLS?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. We integrate with major MLS systems to pull property data, track listings, and sync
+                            showing schedules. Contact us to confirm compatibility with your specific MLS.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What about data security and privacy?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We use bank-level encryption, regular security audits, and comply with GDPR, CCPA, and other
+                            data protection regulations. Your client data is protected with the highest security
+                            standards.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can multiple team members use the same account?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Add unlimited team members with role-based permissions. Control who can view, edit, or
+                            delete records, and track individual performance with detailed analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a demo or get started today.</p>
+            <div class="cta-buttons">
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+                    style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start
+                    Now</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-secondary"
+                    style="font-size: 1.1rem; padding: 1rem 2.5rem;">Schedule a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>teams@auralithai.co</p>
+                    <p>+1 813-437-4612</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+

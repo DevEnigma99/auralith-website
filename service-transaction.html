@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Coordination | Auralith AI</title>
+    <meta name="description"
+        content="Automate paperwork and compliance. AI-powered transaction management for seamless closings.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-hero {
+            padding: 180px 24px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            position: relative;
+            overflow: hidden
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 154, 254, 0.15) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-hero .subtitle {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1
+        }
+
+        .service-section {
+            padding: 60px 24px
+        }
+
+        .service-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 2rem;
+            text-align: center
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            color: #ADB7BB;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3A9AFE;
+            transform: translateY(-5px)
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3A9AFE;
+            margin-bottom: 1.5rem
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3A9AFE, #2575d8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin: 0 auto 1.5rem
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.75rem
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1)
+        }
+
+        .feature-item i {
+            color: #3A9AFE;
+            font-size: 1.25rem;
+            margin-top: 0.25rem
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 0.5rem
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+            margin: 0
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 154, 254, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(58, 154, 254, 0.2)
+        }
+
+        .impact-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A9AFE;
+            margin-bottom: 0.5rem
+        }
+
+        .impact-stat p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            margin: 0
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease
+        }
+
+        .faq-question:hover {
+            color: #3A9AFE
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg)
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            margin: 0;
+            color: #ADB7BB;
+            line-height: 1.6
+        }
+
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%)
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 1rem
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            margin-bottom: 2.5rem
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        @media (max-width:1024px) {
+
+            .benefits-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .steps-container,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:768px) {
+            .service-hero {
+                padding: 140px 16px 32px
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem
+            }
+
+            .service-section {
+                padding: 32px 16px
+            }
+
+            .service-section h2 {
+                font-size: 2rem
+            }
+
+            .benefits-grid,
+            .use-cases-grid,
+            .steps-container,
+            .impact-grid,
+            .features-list {
+                grid-template-columns: 1fr
+            }
+
+            .cta-section {
+                padding: 48px 16px
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center
+            }
+        }
+    </style>
+
+    <link rel='icon' type='image/png' href='assets/favicon.png'>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V5DG2L2VD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3V5DG2L2VD');
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI
+                    Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <h1>Transaction Coordination</h1>
+        <p class="subtitle">Automate paperwork and compliance. AI-powered transaction management that ensures smooth
+            closings and eliminates costly errors.</p>
+        <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+            style="font-size:1.1rem;padding:1rem 2.5rem;">Get Started</a>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>What is Transaction Coordination?</h2>
+            <p>Transaction Coordination is an intelligent system that manages every aspect of your real estate
+                transactions from contract to close. Our AI automates document collection, tracks deadlines, ensures
+                compliance, and coordinates with all parties to keep deals moving forward smoothly.</p>
+            <p>The platform eliminates the stress of transaction management by automatically generating checklists,
+                sending reminders, validating documents, and flagging potential issues before they become problems.
+                Every transaction is tracked in real-time with complete visibility for agents, clients, and
+                stakeholders.</p>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Why It Matters</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Automated Checklists</h3>
+                    <p>AI generates transaction-specific checklists with all required tasks, documents, and deadlines
+                        based on deal type and location.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Deadline Tracking</h3>
+                    <p>Never miss a critical date. Automated reminders keep everyone on track for inspections,
+                        contingencies, and closing dates.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Document Management</h3>
+                    <p>Centralized storage for all transaction documents with version control, e-signatures, and secure
+                        sharing.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Compliance Assurance</h3>
+                    <p>AI validates documents against state and local requirements to ensure regulatory compliance and
+                        reduce liability.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Party Coordination</h3>
+                    <p>Automated communication with buyers, sellers, lenders, title companies, and inspectors keeps
+                        everyone informed.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Issue Detection</h3>
+                    <p>AI identifies potential problems like missing signatures, expired documents, or conflicting terms
+                        before they derail the deal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>How Transaction Coordination Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Contract Upload</h3>
+                    <p>Upload the executed contract and AI automatically extracts key dates, parties, and terms.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Checklist Generation</h3>
+                    <p>System creates a customized checklist with all required tasks, documents, and deadlines for this
+                        specific transaction.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Automated Workflow</h3>
+                    <p>AI sends reminders, requests documents, and coordinates with all parties throughout the
+                        transaction lifecycle.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Smooth Closing</h3>
+                    <p>All documents are complete, signed, and compliant. Transaction closes on time with no surprises.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Smart Document Recognition</h4>
+                        <p>AI automatically identifies document types and extracts key information like dates, amounts,
+                            and parties.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>E-Signature Integration</h4>
+                        <p>Seamless integration with DocuSign, Adobe Sign, and other e-signature platforms for fast
+                            execution.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Timeline Visualization</h4>
+                        <p>Visual timeline shows all milestones, deadlines, and completed tasks at a glance.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Client Portal</h4>
+                        <p>Secure portal where clients can view progress, upload documents, and communicate with you.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Automated Reminders</h4>
+                        <p>Email and SMS reminders sent to all parties for upcoming deadlines and missing documents.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Audit Trail</h4>
+                        <p>Complete record of all actions, communications, and document changes for compliance and
+                            dispute resolution.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Template Library</h4>
+                        <p>Access state-specific forms, disclosures, and addendums with automatic population of known
+                            data.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Mobile Access</h4>
+                        <p>Manage transactions from anywhere with full mobile app functionality for iOS and Android.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Who Benefits From This?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>High-Volume Agents</h3>
+                    <p>Manage multiple simultaneous transactions without hiring a dedicated transaction coordinator.
+                        Scale your business efficiently.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Team Leaders</h3>
+                    <p>Standardize transaction processes across your team and maintain oversight of all deals from a
+                        central dashboard.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Brokerages</h3>
+                    <p>Ensure compliance across all agents, reduce errors and liability, and provide value-added service
+                        to your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section" style="background:rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2>The Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Fewer Delays</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}hrs</div>
+                    <p>Saved Per Transaction</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Error Reduction</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>On-Time Closings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Does this replace my transaction coordinator?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>It can, but many agents use it to augment their TC's work. The system handles routine tasks
+                            automatically, freeing your TC to focus on complex issues and client communication.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is it compliant with my state's requirements?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. Our system includes state-specific checklists, forms, and compliance rules for all 50
+                            states, updated regularly as regulations change.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can clients access their transaction status?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. Clients get secure portal access to view progress, upload documents, and see what's
+                            needed from them in real-time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What if I use a specific transaction management system?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>We integrate with popular systems like Dotloop, SkySlope, and TransactionDesk, or can work as
+                            a standalone solution.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How secure is document storage?<i
+                            class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Documents are encrypted at rest and in transit, stored in SOC 2 compliant data centers, with
+                            role-based access controls and complete audit trails.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a demo or get started today.</p>
+            <div class="cta-buttons">
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+                    style="font-size:1.1rem;padding:1rem 2.5rem;">Start
+                    Now</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-secondary"
+                    style="font-size:1.1rem;padding:1rem 2.5rem;">Schedule
+                    a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>teams@auralithai.co</p>
+                    <p>+1 813-437-4612</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => { button.addEventListener('click', () => { const faqItem = button.parentElement; const isActive = faqItem.classList.contains('active'); document.querySelectorAll('.faq-item').forEach(item => { item.classList.remove('active') }); if (!isActive) { faqItem.classList.add('active') } }) });
+    </script>
+</body>
+
+</html>
+

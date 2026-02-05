@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Qualifier | Auralith AI</title>
+    <meta name="description"
+        content="Instant calls to qualify leads 24/7. AI-powered voice agents that sound human and convert prospects into appointments.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Service Page Specific Styles */
+        .service-hero {
+            padding: 180px 24px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 154, 254, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-hero .subtitle {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-section {
+            padding: 60px 24px;
+        }
+
+        .service-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            color: #ADB7BB;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3A9AFE;
+            transform: translateY(-5px);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #3A9AFE;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3A9AFE, #2575d8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-item i {
+            color: #3A9AFE;
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #ADB7BB;
+            margin: 0;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(58, 154, 254, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(58, 154, 254, 0.2);
+        }
+
+        .impact-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A9AFE;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-stat p {
+            font-size: 1rem;
+            color: #ADB7BB;
+            margin: 0;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #3A9AFE;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            margin: 0;
+            color: #ADB7BB;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(58, 154, 254, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #ADB7BB;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 1024px) {
+
+            .benefits-grid,
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-container,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-hero {
+                padding: 140px 16px 32px;
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-section {
+                padding: 32px 16px;
+            }
+
+            .service-section h2 {
+                font-size: 2rem;
+            }
+
+            .benefits-grid,
+            .use-cases-grid,
+            .steps-container,
+            .impact-grid,
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 48px 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+    <link rel='icon' type='image/png' href='assets/favicon.png'>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V5DG2L2VD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3V5DG2L2VD');
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI
+                    Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section class="service-hero">
+        <h1>AI Voice Qualifier</h1>
+        <p class="subtitle">Instant calls to qualify leads 24/7. Human-like AI voice agents that engage prospects,
+            answer questions, and book appointments automatically.</p>
+        <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+            style="font-size: 1.1rem; padding: 1rem 2.5rem;">Get
+            Started</a>
+    </section>
+
+    <!-- SECTION 2: OVERVIEW -->
+    <section class="service-section">
+        <div class="container">
+            <h2>What is AI Voice Qualifier?</h2>
+            <p>AI Voice Qualifier is an intelligent voice automation system that calls your leads within seconds of
+                submission, qualifies their intent, answers their questions, and books appointments directly into your
+                calendar. Using advanced natural language processing, our AI agents sound remarkably human and can
+                handle complex conversations with ease.</p>
+            <p>Unlike traditional IVR systems or robocalls, our AI adapts to each conversation in real-time,
+                understanding context, handling objections, and providing personalized responses. Every call is
+                recorded, transcribed, and analyzed to continuously improve performance and provide actionable insights
+                for your team.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: KEY BENEFITS -->
+    <section class="service-section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2>Why It Matters</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Response</h3>
+                    <p>Contact leads within 60 seconds of submission. Speed to lead is critical in real estate, and our
+                        AI ensures you're always first to respond.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-moon"></i>
+                    <h3>24/7 Availability</h3>
+                    <p>Never miss a lead again. Our AI works around the clock, including nights, weekends, and holidays,
+                        ensuring every prospect gets immediate attention.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-filter"></i>
+                    <h3>Smart Qualification</h3>
+                    <p>Ask the right questions to determine buyer intent, timeline, budget, and motivation. Only
+                        qualified leads make it to your calendar.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Human-Like Conversations</h3>
+                    <p>Natural speech patterns, appropriate pauses, and contextual understanding make prospects feel
+                        like they're talking to a real person.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Automatic Booking</h3>
+                    <p>AI schedules appointments directly into your calendar based on availability, sends confirmations,
+                        and handles rescheduling requests.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Full Analytics</h3>
+                    <p>Track call duration, qualification rates, objections, and conversion metrics. Every conversation
+                        is transcribed and analyzed for insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: HOW IT WORKS -->
+    <section class="service-section">
+        <div class="container">
+            <h2>How AI Voice Qualifier Works</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Lead Submission</h3>
+                    <p>A new lead enters your system from any source: website, ads, referrals, or third-party platforms.
+                    </p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Instant Call</h3>
+                    <p>AI initiates a call within 60 seconds, introducing itself and beginning the qualification
+                        conversation.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Qualification</h3>
+                    <p>AI asks targeted questions to assess intent, timeline, budget, and readiness while answering
+                        prospect questions.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Appointment Booking</h3>
+                    <p>Qualified leads are scheduled directly into your calendar with full context and conversation
+                        notes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FEATURES -->
+    <section class="service-section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Natural Language Processing</h4>
+                        <p>Advanced AI understands context, intent, and sentiment to deliver human-like conversations.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Custom Scripts</h4>
+                        <p>Tailor conversation flows, questions, and responses to match your brand voice and
+                            qualification criteria.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Objection Handling</h4>
+                        <p>AI is trained to handle common objections and concerns, keeping conversations productive and
+                            positive.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Multi-Language Support</h4>
+                        <p>Communicate with prospects in their preferred language with native-level fluency.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Call Recording & Transcription</h4>
+                        <p>Every call is recorded and transcribed for quality assurance, training, and compliance
+                            purposes.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>CRM Integration</h4>
+                        <p>Automatically log calls, update lead status, and sync appointment data with your existing
+                            CRM.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Sentiment Analysis</h4>
+                        <p>AI detects prospect emotions and adjusts tone and approach to maintain positive engagement.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Voicemail Detection</h4>
+                        <p>Smart detection leaves personalized voicemails and schedules follow-up attempts
+                            automatically.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>A/B Testing</h4>
+                        <p>Test different scripts, voices, and approaches to optimize conversion rates over time.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Human Handoff</h4>
+                        <p>Seamlessly transfer complex calls to human agents when needed, with full context provided.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: USE CASES -->
+    <section class="service-section">
+        <div class="container">
+            <h2>Who Benefits From This?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>High-Volume Agents</h3>
+                    <p>Handle hundreds of leads per month without hiring additional staff. AI qualifies and books only
+                        serious prospects, saving hours of phone time.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Luxury Agents</h3>
+                    <p>Provide white-glove service with instant, professional responses. AI maintains your premium brand
+                        while filtering out unqualified inquiries.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>New Agents</h3>
+                    <p>Compete with established agents by responding faster than anyone else. AI handles initial
+                        qualification so you can focus on closing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: IMPACT -->
+    <section class="service-section" style="background: rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <h2>The Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="stat-number">{X}sec</div>
+                    <p>Average Response Time</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Contact Rate Increase</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X}hrs</div>
+                    <p>Saved Per Week</p>
+                </div>
+                <div class="impact-stat">
+                    <div class="stat-number">{X%}</div>
+                    <p>Appointment Show Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FAQ -->
+    <section class="service-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Does it really sound human?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Our AI uses advanced text-to-speech technology with natural intonation, appropriate
+                            pauses, and conversational patterns. Most prospects don't realize they're speaking with AI
+                            until we tell them.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What happens if the AI can't answer a question?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The AI is trained on your specific business and can handle most common questions. For complex
+                            or unique inquiries, it can either schedule a callback with you or transfer to a human agent
+                            in real-time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I customize what the AI says?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We work with you to create custom scripts that match your brand voice,
+                            qualification criteria, and conversation style. You can update scripts anytime through our
+                            dashboard.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How many calls can it handle simultaneously?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our AI can handle unlimited concurrent calls. Whether you get 5 leads or 500 leads in an
+                            hour, every single one receives an immediate call with no wait time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is it compliant with calling regulations?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Our system is fully compliant with TCPA, DNC regulations, and state-specific calling
+                            laws. We only call leads who have explicitly requested contact and maintain proper consent
+                            records.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if a lead doesn't answer?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The AI will leave a personalized voicemail and automatically schedule follow-up attempts. You
+                            can customize the number of attempts, timing between calls, and voicemail messages.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I listen to the calls?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Every call is recorded and available in your dashboard with full transcription. You can
+                            listen to calls, review transcripts, and use them for training or quality assurance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a demo or get started today.</p>
+            <div class="cta-buttons">
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-primary"
+                    style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start
+                    Now</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn btn-secondary"
+                    style="font-size: 1.1rem; padding: 1rem 2.5rem;">Schedule a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>teams@auralithai.co</p>
+                    <p>+1 813-437-4612</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
