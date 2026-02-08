@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
         });
     }
 
