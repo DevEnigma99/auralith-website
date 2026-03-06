@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | Auralith AI</title>
+    <meta name="description"
+        content="Fill out our quick lead form to see how Auralith AI can automate your real estate business.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="apple-touch-icon" href="/favicon-192x192.png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/auralith-logo.jpg" alt="Auralith AI Logo">
+                <span class="logo-text">Auralith AI</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://link.auralithai.co/widget/form/r3Y4xt6K1KiIf8h0GKOs" class="btn nav-btn">Try AI
+                    Demo</a>
+                <a href="https://offers.auralithai.co/book-a-call" class="btn nav-btn">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Form Section -->
+    <section class="form-page-section">
+        <div class="container">
+            <div class="form-container" id="formWrapper">
+                <div class="form-header">
+                    <h2>Ready to Grow?</h2>
+                    <p>Enter your details below and our AI will reach out instantly.</p>
+                </div>
+                
+                <form id="leadForm" class="lead-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="zipCode">ZIP Code</label>
+                        <input type="text" id="zipCode" name="zipCode" placeholder="90210" pattern="[0-9]{5}" title="Please enter a 5-digit ZIP code" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary form-submit-btn">Get Started</button>
+                </form>
+
+                <div id="successMessage" class="form-success">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Submission Received!</h3>
+                    <p>Thank you, <span id="userName"></span>. Our AI ISA will be in touch shortly.</p>
+                    <a href="index.html" class="btn btn-secondary mt-sm">Return Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Auralith AI</h3>
+                    <p>Automation Built for People Who Actually Work in Real Estate.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://offers.auralithai.co/terms-of-service-6128">Terms of Service</a></li>
+                        <li><a href="https://offers.auralithai.co/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>teams@auralithai.co</p>
+                    <p>+1 813-437-4612</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Auralith AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            document.getElementById('userName').textContent = firstName;
+            
+            // Hide form and show success message
+            document.getElementById('leadForm').style.display = 'none';
+            document.querySelector('.form-header').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // In a real application, you would send the data here using fetch()
+            console.log('Form submitted:', {
+                firstName: firstName,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                zipCode: document.getElementById('zipCode').value
+            });
+        });
+    </script>
+</body>
+
+</html>

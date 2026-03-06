@@ -1,0 +1,116 @@
+/* Custom Lead Form Styles */
+
+.form-page-section {
+    padding: var(--spacing-xl) 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top right, rgba(107, 165, 255, 0.05), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(107, 165, 255, 0.03), transparent 30%);
+}
+
+.form-container {
+    max-width: 600px;
+    width: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-soft);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.form-header h2 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-header p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.lead-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.input-group input {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 15px rgba(107, 165, 255, 0.1);
+}
+
+.input-group input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.form-submit-btn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+/* Success Message Placeholder Style */
+.form-success {
+    display: none;
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+.form-success i {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+}
+
+.form-success h3 {
+    margin-bottom: 0.5rem;
+}
